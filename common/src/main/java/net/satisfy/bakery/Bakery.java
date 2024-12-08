@@ -1,10 +1,7 @@
 package net.satisfy.bakery;
 
 import net.satisfy.bakery.event.CommonEvents;
-import net.satisfy.bakery.registry.EntityTypeRegistry;
-import net.satisfy.bakery.registry.ObjectRegistry;
-import net.satisfy.bakery.registry.RecipeTypeRegistry;
-import net.satisfy.bakery.registry.TabRegistry;
+import net.satisfy.bakery.registry.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -18,6 +15,7 @@ public class Bakery {
         RecipeTypeRegistry.init();
         CommonEvents.init();
         TabRegistry.init();
+        SoundEventRegistry.init();
     }
 }
 

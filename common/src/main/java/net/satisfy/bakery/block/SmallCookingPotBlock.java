@@ -1,6 +1,5 @@
 package net.satisfy.bakery.block;
 
-import de.cristelknight.doapi.common.registry.DoApiSoundEventRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
@@ -42,6 +41,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.satisfy.bakery.block.entity.SmallCookingPotBlockEntity;
+import net.satisfy.bakery.registry.SoundEventRegistry;
 import net.satisfy.bakery.util.GeneralUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -181,7 +181,7 @@ public class SmallCookingPotBlock extends BaseEntityBlock {
         double e = pos.getY() + 0.7;
         double f = pos.getZ() + 0.5;
 
-        world.playLocalSound(d, e, f, DoApiSoundEventRegistry.COOKING_POT_BOILING.get(), SoundSource.BLOCKS, 0.05f, 1.0f, false);
+        world.playLocalSound(d, e, f, SoundEventRegistry.COOKING_POT_BOILING.get(), SoundSource.BLOCKS, 0.05f, 1.0f, false);
 
 
         double h = random.nextDouble() * 0.6 - 0.3;

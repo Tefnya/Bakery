@@ -1,6 +1,5 @@
 package net.satisfy.bakery.event;
 
-import de.cristelknight.doapi.common.registry.DoApiSoundEventRegistry;
 import dev.architectury.event.EventResult;
 import dev.architectury.event.events.common.PlayerEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -19,6 +18,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 import net.satisfy.bakery.registry.ObjectRegistry;
+import net.satisfy.bakery.registry.SoundEventRegistry;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;
@@ -33,7 +33,7 @@ public class CommonEvents {
     public static EventResult attack(Player player, Level level, Entity target, InteractionHand hand, @Nullable EntityHitResult result) {
         ItemStack itemStack = player.getItemInHand(hand);
         if (itemStack.is(ObjectRegistry.SMALL_COOKING_POT_ITEM.get())) {
-            level.playSound(null, target.getX(), target.getY(), target.getZ(), DoApiSoundEventRegistry.COOKING_POT_HIT.get(), SoundSource.PLAYERS, 0.5F, 0.75F);
+            level.playSound(null, target.getX(), target.getY(), target.getZ(), SoundEventRegistry.COOKING_POT_HIT.get(), SoundSource.PLAYERS, 0.5F, 0.75F);
             target.hurt(level.damageSources().generic(), 1.2F);
             itemStack.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(hand));
             itemStack.addAttributeModifier(Attributes.ATTACK_SPEED, new AttributeModifier(ATTACK_SPEED_MODIFIER_ID, "Weapon modifier", -2.0, AttributeModifier.Operation.ADDITION), EquipmentSlot.MAINHAND);

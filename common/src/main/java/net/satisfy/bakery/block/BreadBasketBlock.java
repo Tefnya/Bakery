@@ -1,6 +1,5 @@
 package net.satisfy.bakery.block;
 
-import de.cristelknight.doapi.common.block.EatableBoxBlock;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

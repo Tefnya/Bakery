@@ -1,7 +1,6 @@
 package net.satisfy.bakery.block.cakes;
 
 import com.mojang.datafixers.util.Pair;
-import de.cristelknight.doapi.common.registry.DoApiSoundEventRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
@@ -30,6 +29,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.satisfy.bakery.block.FacingBlock;
+import net.satisfy.bakery.registry.SoundEventRegistry;
 import net.satisfy.bakery.registry.TagsRegistry;
 import net.satisfy.bakery.util.GeneralUtil;
 import org.jetbrains.annotations.NotNull;
@@ -145,7 +145,7 @@ public class PieBlock extends FacingBlock {
         double zMotion = direction.getStepZ() * 0.13;
 
         GeneralUtil.spawnSlice(level, this.getPieSliceItem(), pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5, xMotion, yMotion, zMotion);
-        level.playSound(null, pos, DoApiSoundEventRegistry.CAKE_CUT.get(), SoundSource.PLAYERS, 0.75F, 0.75F);
+        level.playSound(null, pos, SoundEventRegistry.CAKE_CUT.get(), SoundSource.PLAYERS, 0.75F, 0.75F);
         return InteractionResult.SUCCESS;
     }
 

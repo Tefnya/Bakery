@@ -1,8 +1,6 @@
 package net.satisfy.bakery.util;
 
 import com.mojang.datafixers.util.Pair;
-import de.cristelknight.doapi.common.entity.ChairEntity;
-import de.cristelknight.doapi.common.registry.DoApiEntityTypes;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -15,6 +13,8 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
+import net.satisfy.bakery.entity.ChairEntity;
+import net.satisfy.bakery.registry.EntityTypeRegistry;
 
 public class ChairUtil {
     private static final Map<ResourceLocation, Map<BlockPos, Pair<ChairEntity, BlockPos>>> CHAIRS = new HashMap();
@@ -34,7 +34,7 @@ public class ChairUtil {
         } else {
             BlockPos hitPos = hit.getBlockPos();
             if (!isOccupied(world, hitPos) && player.getItemInHand(hand).isEmpty()) {
-                ChairEntity chair = (ChairEntity)((EntityType)DoApiEntityTypes.CHAIR.get()).create(world);
+                ChairEntity chair = (ChairEntity)((EntityType) EntityTypeRegistry.CHAIR.get()).create(world);
                 chair.moveTo((double)hitPos.getX() + 0.5, (double)hitPos.getY() + 0.25 + extraHeight, (double)hitPos.getZ() + 0.5, 0.0F, 0.0F);
                 if (addChairEntity(world, hitPos, chair, player.blockPosition())) {
                     world.addFreshEntity(chair);

@@ -1,6 +1,5 @@
 package net.satisfy.bakery.item;
 
-import de.cristelknight.doapi.common.item.StandardItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;

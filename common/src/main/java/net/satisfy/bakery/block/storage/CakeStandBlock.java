@@ -1,8 +1,5 @@
 package net.satisfy.bakery.block.storage;
 
-
-import de.cristelknight.doapi.common.block.StorageBlock;
-import de.cristelknight.doapi.common.block.entity.StorageBlockEntity;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -24,6 +21,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.satisfy.bakery.block.StorageBlock;
+import net.satisfy.bakery.block.entity.StorageBlockEntity;
 import net.satisfy.bakery.registry.StorageTypeRegistry;
 import org.jetbrains.annotations.NotNull;
 

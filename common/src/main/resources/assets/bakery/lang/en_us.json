@@ -144,5 +144,12 @@
   "tooltip.bakery.thankyou_2": "When placed:",
   "tooltip.bakery.thankyou_3": "Thank you for playing Bakery!",
   "tooltip.bakery.thankyou_4": "Grants Resistance in a radius of 8 blocks",
-  "tooltip.bakery.cakedoughonstation": "Place Cake Dough on top of the Caking Station to start baking"
+  "tooltip.bakery.cakedoughonstation": "Place Cake Dough on top of the Caking Station to start baking",
+  "sound.bakery.cooking_pot_boiling": "Boiling Pot",
+  "sound.bakery.cake_cut": "Cutting Cake",
+  "sound.bakery.cabinet_close": "Closing Cabinet",
+  "sound.bakery.cabinet_open": "Opening Cabinet",
+  "sound.bakery.drawer_close": "Closing Drawer",
+  "sound.bakery.drawer_open": "Opening Drawer",
+  "sound.bakery.cooking_pot_hit": "Clang!"
 }

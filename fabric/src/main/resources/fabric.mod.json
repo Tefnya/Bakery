@@ -18,9 +18,6 @@
     "main": [
       "net.satisfy.bakery.fabric.BakeryFabric"
     ],
-    "doapi": [
-      "net.satisfy.bakery.util.DoApiImpl"
-    ],
     "client": [
       "net.satisfy.bakery.fabric.client.BakeryClientFabric"
     ],
