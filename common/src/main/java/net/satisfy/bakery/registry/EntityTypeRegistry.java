@@ -11,6 +11,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.satisfy.bakery.block.entity.CabinetBlockEntity;
 import net.satisfy.bakery.block.entity.SmallCookingPotBlockEntity;
 import net.satisfy.bakery.entity.WanderingBakerEntity;
 import net.satisfy.bakery.util.BakeryIdentifier;
@@ -30,6 +31,7 @@ public enum EntityTypeRegistry {
     public static final RegistrySupplier<BlockEntityType<SmallCookingPotBlockEntity>> SMALL_COOKING_POT_BLOCK_ENTITY = registerBlockEntity("small_cooking_pot", () -> BlockEntityType.Builder.of(SmallCookingPotBlockEntity::new, ObjectRegistry.SMALL_COOKING_POT.get()).build(null));
 
     public static final RegistrySupplier<BlockEntityType<StorageBlockEntity>> STORAGE_ENTITY = registerBlockEntity("storage", () -> BlockEntityType.Builder.of(StorageBlockEntity::new, StorageTypeRegistry.registerBlocks(new HashSet<>()).toArray(new Block[0])).build(null));
+    public static final RegistrySupplier<BlockEntityType<CabinetBlockEntity>> CABINET_BLOCK_ENTITY = registerBlockEntity("cabinet", () -> BlockEntityType.Builder.of(CabinetBlockEntity::new, StorageTypeRegistry.registerBlocks(new HashSet<>()).toArray(new Block[0])).build(null));
 
     public static final RegistrySupplier<EntityType<WanderingBakerEntity>> WANDERING_BAKER = registerEntityType("wandering_baker",
             () -> EntityType.Builder.of(WanderingBakerEntity::new, MobCategory.CREATURE)

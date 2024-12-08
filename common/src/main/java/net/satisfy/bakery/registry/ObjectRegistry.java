@@ -1,7 +1,5 @@
 package net.satisfy.bakery.registry;
 
-import de.cristelknight.doapi.Util;
-import de.cristelknight.doapi.common.block.*;
 import de.cristelknight.doapi.common.registry.DoApiSoundEventRegistry;
 import dev.architectury.core.item.ArchitecturySpawnEggItem;
 import dev.architectury.registry.registries.DeferredRegister;
@@ -24,6 +22,7 @@ import net.satisfy.bakery.block.*;
 import net.satisfy.bakery.block.TableBlock;
 import net.satisfy.bakery.block.cakes.*;
 import net.satisfy.bakery.block.storage.*;
+import net.satisfy.bakery.util.Util;
 import net.satisfy.farm_and_charm.item.food.EffectBlockItem;
 import net.satisfy.farm_and_charm.item.food.EffectItem;
 import net.satisfy.farm_and_charm.registry.MobEffectRegistry;
