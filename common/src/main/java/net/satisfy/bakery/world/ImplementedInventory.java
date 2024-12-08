@@ -13,13 +13,13 @@ import org.jetbrains.annotations.Nullable;
 public interface ImplementedInventory extends WorldlyContainer {
     NonNullList<ItemStack> getItems();
 
-    static de.cristelknight.doapi.common.world.ImplementedInventory of(NonNullList<ItemStack> items) {
+    static ImplementedInventory of(NonNullList<ItemStack> items) {
         return () -> {
             return items;
         };
     }
 
-    static de.cristelknight.doapi.common.world.ImplementedInventory ofSize(int size) {
+    static ImplementedInventory ofSize(int size) {
         return of(NonNullList.withSize(size, ItemStack.EMPTY));
     }
 

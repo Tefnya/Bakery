@@ -2,7 +2,6 @@ package net.satisfy.bakery.recipe;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
-import de.cristelknight.doapi.common.util.GeneralUtil;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
@@ -13,6 +12,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.satisfy.bakery.registry.RecipeTypeRegistry;
+import net.satisfy.bakery.util.GeneralUtil;
 import org.jetbrains.annotations.NotNull;
 
 public class CookingPotRecipe implements Recipe<Container> {
