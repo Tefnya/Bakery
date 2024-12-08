@@ -1,6 +1,5 @@
 package net.satisfy.bakery.entity;
 
-import de.cristelknight.doapi.common.util.VillagerUtil;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -10,6 +9,7 @@ import net.minecraft.world.entity.npc.WanderingTrader;
 import net.minecraft.world.item.trading.MerchantOffers;
 import net.minecraft.world.level.Level;
 import net.satisfy.bakery.registry.ObjectRegistry;
+import net.satisfy.bakery.util.VillagerUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
