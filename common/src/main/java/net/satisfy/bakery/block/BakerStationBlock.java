@@ -1,6 +1,5 @@
 package net.satisfy.bakery.block;
 
-import de.cristelknight.doapi.common.block.FacingBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;

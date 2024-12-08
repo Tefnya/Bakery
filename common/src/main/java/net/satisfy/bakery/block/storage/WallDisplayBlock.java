@@ -1,7 +1,6 @@
 package net.satisfy.bakery.block.storage;
 
 import de.cristelknight.doapi.common.block.StorageBlock;
-import de.cristelknight.doapi.common.util.GeneralUtil;
 import net.minecraft.ChatFormatting;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
@@ -28,6 +27,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.satisfy.bakery.registry.StorageTypeRegistry;
 import net.satisfy.bakery.registry.TagsRegistry;
+import net.satisfy.bakery.util.GeneralUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -36,17 +36,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
 
-import static de.cristelknight.doapi.common.util.GeneralUtil.LineConnectingType;
-
 
 public class WallDisplayBlock extends StorageBlock {
 
     public static final DirectionProperty FACING;
-    public static final EnumProperty<LineConnectingType> TYPE;
+    public static final EnumProperty<GeneralUtil.LineConnectingType> TYPE;
 
     public WallDisplayBlock(Properties settings) {
         super(settings);
-        this.registerDefaultState(((this.stateDefinition.any().setValue(FACING, Direction.NORTH)).setValue(TYPE, LineConnectingType.NONE)));
+        this.registerDefaultState(((this.stateDefinition.any().setValue(FACING, Direction.NORTH)).setValue(TYPE, GeneralUtil.LineConnectingType.NONE)));
     }
 
     @Override
@@ -113,7 +111,7 @@ public class WallDisplayBlock extends StorageBlock {
 
         Direction facing = state.getValue(FACING);
 
-        LineConnectingType type;
+        GeneralUtil.LineConnectingType type;
         switch (facing) {
             case EAST ->
                     type = getType(state, world.getBlockState(pos.south()), world.getBlockState(pos.north()));
@@ -130,18 +128,18 @@ public class WallDisplayBlock extends StorageBlock {
         world.setBlock(pos, state, 3);
     }
 
-    public LineConnectingType getType(BlockState state, BlockState left, BlockState right) {
+    public GeneralUtil.LineConnectingType getType(BlockState state, BlockState left, BlockState right) {
         boolean shape_left_same = left.getBlock() == state.getBlock() && left.getValue(FACING) == state.getValue(FACING);
         boolean shape_right_same = right.getBlock() == state.getBlock() && right.getValue(FACING) == state.getValue(FACING);
 
         if (shape_left_same && shape_right_same) {
-            return LineConnectingType.MIDDLE;
+            return GeneralUtil.LineConnectingType.MIDDLE;
         } else if (shape_left_same) {
-            return LineConnectingType.LEFT;
+            return GeneralUtil.LineConnectingType.LEFT;
         } else if (shape_right_same) {
-            return LineConnectingType.RIGHT;
+            return GeneralUtil.LineConnectingType.RIGHT;
         }
-        return LineConnectingType.NONE;
+        return GeneralUtil.LineConnectingType.NONE;
     }
 
     @Override

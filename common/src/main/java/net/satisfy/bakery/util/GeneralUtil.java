@@ -64,7 +64,7 @@ import org.jetbrains.annotations.Nullable;
 public class GeneralUtil {
     private static final String BLOCK_POS_KEY = "block_pos";
     private static final String BLOCK_POSES_KEY = "block_poses";
-    public static final EnumProperty<de.cristelknight.doapi.common.util.GeneralUtil.LineConnectingType> LINE_CONNECTING_TYPE = EnumProperty.create("type", de.cristelknight.doapi.common.util.GeneralUtil.LineConnectingType.class);
+    public static final EnumProperty<GeneralUtil.LineConnectingType> LINE_CONNECTING_TYPE = EnumProperty.create("type", GeneralUtil.LineConnectingType.class);
 
     public GeneralUtil() {
     }
