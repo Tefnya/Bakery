@@ -1,7 +1,6 @@
 package net.satisfy.bakery.client.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import de.cristelknight.doapi.client.ClientUtil;
 import de.cristelknight.doapi.client.render.block.storage.api.StorageTypeRenderer;
 import de.cristelknight.doapi.common.block.entity.StorageBlockEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -9,6 +8,7 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.satisfy.bakery.client.ClientUtil;
 
 public class WallDisplayRenderer implements StorageTypeRenderer {
     @Override
