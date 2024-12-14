@@ -8,9 +8,9 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
-import net.satisfy.bakery.block.entity.StorageBlockEntity;
+import net.satisfy.bakery.core.block.entity.StorageBlockEntity;
 import net.satisfy.bakery.client.ClientUtil;
-import net.satisfy.bakery.registry.ObjectRegistry;
+import net.satisfy.bakery.core.registry.ObjectRegistry;
 
 @Environment(EnvType.CLIENT)
 public class BreadBoxRenderer implements StorageTypeRenderer {

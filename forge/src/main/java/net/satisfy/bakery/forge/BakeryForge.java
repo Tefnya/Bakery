@@ -6,7 +6,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.satisfy.bakery.Bakery;
-import net.satisfy.bakery.registry.CompostableRegistry;
+import net.satisfy.bakery.core.registry.CompostableRegistry;
 
 @Mod(Bakery.MOD_ID)
 public class BakeryForge {

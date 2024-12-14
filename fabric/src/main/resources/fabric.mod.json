@@ -22,10 +22,10 @@
       "net.satisfy.bakery.fabric.client.BakeryClientFabric"
     ],
     "rei_client": [
-      "net.satisfy.bakery.fabric.rei.BakeryReiClientPluginFabric"
+      "net.satisfy.bakery.fabric.core.rei.BakeryReiClientPluginFabric"
     ],
     "jei_mod_plugin": [
-      "net.satisfy.bakery.compat.jei.BakeryJEIPlugin"
+      "net.satisfy.bakery.core.compat.jei.BakeryJEIPlugin"
     ]
   },
   "mixins": [

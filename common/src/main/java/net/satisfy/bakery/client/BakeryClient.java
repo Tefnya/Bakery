@@ -7,9 +7,9 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.renderer.RenderType;
 import net.satisfy.bakery.client.model.WanderingBakerModel;
-import net.satisfy.bakery.registry.ObjectRegistry;
+import net.satisfy.bakery.core.registry.ObjectRegistry;
 import net.satisfy.bakery.client.render.WanderingBakerRenderer;
-import net.satisfy.bakery.registry.EntityTypeRegistry;
+import net.satisfy.bakery.core.registry.EntityTypeRegistry;
 
 @Environment(EnvType.CLIENT)
 public class BakeryClient {

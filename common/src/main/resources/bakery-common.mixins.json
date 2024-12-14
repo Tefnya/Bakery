@@ -4,7 +4,7 @@
   "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
   "mixins": [
-    "WanderingTraderManagerMixin"
+    "net.satisfy.bakery.core.mixin.WanderingTraderManagerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -9,7 +9,7 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.world.entity.npc.WanderingTrader;
-import net.satisfy.bakery.util.BakeryIdentifier;
+import net.satisfy.bakery.core.util.BakeryIdentifier;
 
 @Environment(EnvType.CLIENT)
 public class WanderingBakerModel<T extends WanderingTrader> extends VillagerModel<T> {

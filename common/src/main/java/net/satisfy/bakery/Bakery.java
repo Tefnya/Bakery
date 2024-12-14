@@ -1,6 +1,7 @@
 package net.satisfy.bakery;
 
-import net.satisfy.bakery.event.CommonEvents;
+import net.satisfy.bakery.core.registry.*;
+import net.satisfy.bakery.core.event.CommonEvents;
 import net.satisfy.bakery.registry.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

@@ -3,7 +3,7 @@ package net.satisfy.bakery.client;
 import net.minecraft.resources.ResourceLocation;
 import net.satisfy.bakery.Bakery;
 import net.satisfy.bakery.client.render.*;
-import net.satisfy.bakery.registry.StorageTypeRegistry;
+import net.satisfy.bakery.core.registry.StorageTypeRegistry;
 
 public class ClientStorageTypes {
     public static void registerStorageType(ResourceLocation location, StorageTypeRenderer renderer) {

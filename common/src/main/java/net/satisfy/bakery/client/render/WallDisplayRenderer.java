@@ -6,7 +6,7 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.satisfy.bakery.block.entity.StorageBlockEntity;
+import net.satisfy.bakery.core.block.entity.StorageBlockEntity;
 import net.satisfy.bakery.client.ClientUtil;
 
 public class WallDisplayRenderer implements StorageTypeRenderer {
