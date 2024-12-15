@@ -1,10 +1,10 @@
 {
   "required": true,
-  "package": "net.satisfy.bakery.mixin",
+  "package": "net.satisfy.bakery.core.mixin",
   "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
   "mixins": [
-    "net.satisfy.bakery.core.mixin.WanderingTraderManagerMixin"
+    "WanderingTraderManagerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

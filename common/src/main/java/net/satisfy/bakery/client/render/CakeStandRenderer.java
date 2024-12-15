@@ -9,7 +9,7 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.satisfy.bakery.core.block.entity.StorageBlockEntity;
-import net.satisfy.bakery.client.ClientUtil;
+import net.satisfy.farm_and_charm.client.util.ClientUtil;
 
 @Environment(EnvType.CLIENT)
 public class CakeStandRenderer implements StorageTypeRenderer {

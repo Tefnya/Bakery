@@ -18,18 +18,16 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
-import net.satisfy.bakery.block.*;
 import net.satisfy.bakery.core.block.*;
-import net.satisfy.bakery.core.block.cakes.*;
-import net.satisfy.bakery.core.block.storage.*;
-import net.satisfy.bakery.core.util.Util;
-import net.satisfy.farm_and_charm.item.food.EffectBlockItem;
-import net.satisfy.farm_and_charm.item.food.EffectItem;
-import net.satisfy.farm_and_charm.registry.MobEffectRegistry;
+import net.satisfy.bakery.core.block.cake.*;
 import net.satisfy.bakery.Bakery;
-import net.satisfy.bakery.core.item.BakeryStandardItem;
 import net.satisfy.bakery.core.item.SmallCookingPotItem;
 import net.satisfy.bakery.core.util.BakeryIdentifier;
+import net.satisfy.farm_and_charm.core.block.*;
+import net.satisfy.farm_and_charm.core.item.food.EffectBlockItem;
+import net.satisfy.farm_and_charm.core.item.food.EffectItem;
+import net.satisfy.farm_and_charm.core.registry.MobEffectRegistry;
+import net.satisfy.farm_and_charm.core.util.Util;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -40,27 +38,15 @@ public class ObjectRegistry {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(Bakery.MOD_ID, Registries.BLOCK);
     public static final Registrar<Block> BLOCK_REGISTRAR = BLOCKS.getRegistrar();
 
-    public static BlockBehaviour.Properties properties(float strength) {
-        return properties(strength, strength);
-    }
-
-    public static BlockBehaviour.Properties properties(float breakSpeed, float explosionResist) {
-        return BlockBehaviour.Properties.of().strength(breakSpeed, explosionResist);
-    }
-
-    public static final Supplier<Block> STANDARD = registerWithoutItem("standard", () -> {
-            return new StandardBlock(properties(1.0F).instrument(NoteBlockInstrument.BASS).noCollission().sound(SoundType.WOOD));
-        });
-    public static final Supplier<Block> WALL_STANDARD = registerWithoutItem("wall_standard", () -> {
-            return new StandardWallBlock(properties(1.0F).instrument(NoteBlockInstrument.BASS).noCollission().sound(SoundType.WOOD).dropsLike((Block)STANDARD.get()));
-        });
+    public static final RegistrySupplier<Block> BAKERY_BANNER = registerWithItem("bakery_banner", () -> new CompletionistBannerBlock(BlockBehaviour.Properties.of().strength(1F).instrument(NoteBlockInstrument.BASS).noCollission().sound(SoundType.WOOD)));
+    public static final RegistrySupplier<Block> BAKERY_WALL_BANNER = registerWithoutItem("bakery_wall_banner", () -> new CompletionistWallBannerBlock(BlockBehaviour.Properties.of().strength(1F).instrument(NoteBlockInstrument.BASS).noCollission().sound(SoundType.WOOD)));
 
     public static final RegistrySupplier<Block> KITCHEN_SINK = registerWithItem("kitchen_sink", () -> new SinkBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS).noOcclusion()));
     public static final RegistrySupplier<Block> BAKER_STATION = registerWithItem("baker_station", () -> new BakerStationBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
     public static final RegistrySupplier<Block> BRICK_COUNTER = registerWithItem("brick_counter", () -> new LineConnectingBlock(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
-    public static final RegistrySupplier<Block> CABINET = registerWithItem("cabinet", () -> new CabinetBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD), SoundEventRegistry.CABINET_OPEN, SoundEventRegistry.CABINET_CLOSE));
-    public static final RegistrySupplier<Block> DRAWER = registerWithItem("drawer", () -> new CabinetBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD), SoundEventRegistry.DRAWER_OPEN, SoundEventRegistry.DRAWER_CLOSE));
-    public static final RegistrySupplier<Block> WALL_CABINET = registerWithItem("wall_cabinet", () -> new CabinetWallBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD), SoundEventRegistry.CABINET_OPEN, SoundEventRegistry.CABINET_CLOSE));
+    public static final RegistrySupplier<Block> CABINET = registerWithItem("cabinet", () -> new CabinetBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).sound(SoundType.WOOD), SoundEventRegistry.CABINET_OPEN.get(), SoundEventRegistry.CABINET_CLOSE.get()));
+    public static final RegistrySupplier<Block> DRAWER = registerWithItem("drawer", () -> new CabinetBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).sound(SoundType.WOOD), SoundEventRegistry.DRAWER_OPEN.get(), SoundEventRegistry.DRAWER_CLOSE.get()));
+    public static final RegistrySupplier<Block> WALL_CABINET = registerWithItem("wall_cabinet", () -> new CabinetWallBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).sound(SoundType.WOOD), SoundEventRegistry.CABINET_OPEN.get(), SoundEventRegistry.CABINET_CLOSE.get()));
     public static final RegistrySupplier<Block> IRON_BENCH = registerWithItem("iron_bench", () -> new BenchBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
     public static final RegistrySupplier<Block> IRON_CHAIR = registerWithItem("iron_chair", () -> new ChairBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
     public static final RegistrySupplier<Block> IRON_TABLE = registerWithItem("iron_table", () -> new TableBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
@@ -135,8 +121,6 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Item> WAFFLE = registerItem("waffle", () -> new EffectBlockItem(WAFFLE_BLOCK.get(), getFoodItemSettings(5, 0.5f, MobEffectRegistry.SUSTENANCE.get(), 800)));
     public static final RegistrySupplier<Item> CHOCOLATE_TRUFFLE = registerItem("chocolate_truffle", () -> new EffectItem(getFoodItemSettings(2, 0.4f, MobEffectRegistry.SWEETS.get(), 900), 200, false));
     public static final RegistrySupplier<Item> MISSLILITU_BISCUIT = registerItem("misslilitu_biscuit", () -> new EffectItem(getFoodItemSettings(6, 0.6f, MobEffectRegistry.SUSTENANCE.get(), 900), 4200, false));
-    public static final RegistrySupplier<Item> WANDERING_BAKER_SPAWN_EGG = registerItem("wandering_baker_spawn_egg", () -> new ArchitecturySpawnEggItem(EntityTypeRegistry.WANDERING_BAKER, -1, -1, getSettingsWithoutTab()));
-    public static final RegistrySupplier<Item>  BAKERY_STANDARD = registerItem("bakery_standard", () -> new BakeryStandardItem(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON)));
     public static final RegistrySupplier<Block> BLANK_CAKE = registerWithoutItem("blank_cake", () -> new BlankCakeBlock(BlockBehaviour.Properties.copy(Blocks.CAKE).forceSolidOn()));
     public static final RegistrySupplier<Block> APPLE_CUPCAKE_BLOCK = registerWithoutItem("apple_cupcake_block", () -> new CupcakeBlock(BlockBehaviour.Properties.copy(Blocks.CAKE).instabreak().forceSolidOn()));
     public static final RegistrySupplier<Block> SWEETBERRY_CUPCAKE_BLOCK = registerWithoutItem("sweetberry_cupcake_block", () -> new CupcakeBlock(BlockBehaviour.Properties.copy(Blocks.CAKE).instabreak().forceSolidOn()));
@@ -149,6 +133,23 @@ public class ObjectRegistry {
         ITEMS.register();
         BLOCKS.register();
     }
+
+    public static final RegistrySupplier<Item> WANDERING_BAKER_SPAWN_EGG;
+
+    static {
+        WANDERING_BAKER_SPAWN_EGG = ITEMS.register(
+                new BakeryIdentifier("wandering_baker_spawn_egg"),
+                () -> new ArchitecturySpawnEggItem(
+                        EntityTypeRegistry.WANDERING_BAKER, // Use the RegistrySupplier directly
+                        -1, // Primary color
+                        -1, // Secondary color
+                        getSettingsWithoutTab()
+                )
+        );
+    }
+
+
+
 
     private static Item.Properties getSettings(Consumer<Item.Properties> consumer) {
         Item.Properties settings = new Item.Properties();
@@ -187,6 +188,14 @@ public class ObjectRegistry {
 
     private static Item.Properties getFoodItemSettings(int nutrition, float saturationMod, MobEffect effect, int duration) {
         return getFoodItemSettings(nutrition, saturationMod, effect, duration, true, false);
+    }
+
+    public static BlockBehaviour.Properties properties(float strength) {
+        return properties(strength, strength);
+    }
+
+    public static BlockBehaviour.Properties properties(float breakSpeed, float explosionResist) {
+        return BlockBehaviour.Properties.of().strength(breakSpeed, explosionResist);
     }
 
     @SuppressWarnings("all")

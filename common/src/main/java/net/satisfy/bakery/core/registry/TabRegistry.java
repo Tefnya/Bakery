@@ -89,7 +89,7 @@ public class TabRegistry {
                     ObjectRegistry.GRILLED_BACON_SANDWICH,
                     ObjectRegistry.BREAD_WITH_JAM,
                     ObjectRegistry.WANDERING_BAKER_SPAWN_EGG,
-                    ObjectRegistry.BAKERY_STANDARD
+                    ObjectRegistry.BAKERY_BANNER
             ).forEach(itemSupplier -> {
                 ItemStack itemStack = new ItemStack(itemSupplier.get(), 1);
                 if (itemStack.getCount() != 1) {

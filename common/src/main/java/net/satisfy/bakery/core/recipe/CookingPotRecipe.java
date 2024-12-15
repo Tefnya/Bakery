@@ -12,7 +12,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.satisfy.bakery.core.registry.RecipeTypeRegistry;
-import net.satisfy.bakery.core.util.GeneralUtil;
+import net.satisfy.farm_and_charm.core.util.GeneralUtil;
 import org.jetbrains.annotations.NotNull;
 
 public class CookingPotRecipe implements Recipe<Container> {

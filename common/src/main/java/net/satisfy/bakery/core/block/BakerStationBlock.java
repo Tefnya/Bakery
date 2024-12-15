@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.satisfy.bakery.core.registry.ObjectRegistry;
+import net.satisfy.farm_and_charm.core.block.FacingBlock;
 import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings({"deprecation"})

@@ -7,7 +7,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.satisfy.bakery.core.block.entity.StorageBlockEntity;
-import net.satisfy.bakery.client.ClientUtil;
+import net.satisfy.farm_and_charm.client.util.ClientUtil;
 
 public class WallDisplayRenderer implements StorageTypeRenderer {
     @Override

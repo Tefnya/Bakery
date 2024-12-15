@@ -9,12 +9,13 @@ import net.minecraft.world.entity.npc.WanderingTrader;
 import net.minecraft.world.item.trading.MerchantOffers;
 import net.minecraft.world.level.Level;
 import net.satisfy.bakery.core.registry.ObjectRegistry;
-import net.satisfy.bakery.core.util.VillagerUtil;
+import net.satisfy.farm_and_charm.core.util.VillagerUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 
-import static net.satisfy.farm_and_charm.registry.ObjectRegistry.*;
+import static net.satisfy.farm_and_charm.core.registry.ObjectRegistry.*;
+
 
 public class WanderingBakerEntity extends WanderingTrader {
     public static final HashMap<Integer, VillagerTrades.ItemListing[]> TRADES = createTrades();

@@ -5,6 +5,7 @@ import net.satisfy.bakery.Bakery;
 import net.satisfy.bakery.core.registry.CompostableRegistry;
 
 public class BakeryFabric implements ModInitializer {
+
     @Override
     public void onInitialize() {
         Bakery.init();

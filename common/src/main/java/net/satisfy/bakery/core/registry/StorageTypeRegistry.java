@@ -7,15 +7,12 @@ import net.satisfy.bakery.core.util.BakeryIdentifier;
 import java.util.Set;
 
 public class StorageTypeRegistry {
-
-
     public static final ResourceLocation CAKE_STAND = new BakeryIdentifier("cake_stand");
     public static final ResourceLocation TRAY = new BakeryIdentifier("tray");
     public static final ResourceLocation BREADBOX = new BakeryIdentifier("breadbox");
     public static final ResourceLocation CAKE_DISPLAY = new BakeryIdentifier("cake_display");
     public static final ResourceLocation CUPCAKE_DISPLAY = new BakeryIdentifier("cupcake_display");
     public static final ResourceLocation WALL_DISPLAY = new BakeryIdentifier("wall_display");
-
 
     public static Set<Block> registerBlocks(Set<Block> blocks) {
         blocks.add(ObjectRegistry.CAKE_STAND.get());

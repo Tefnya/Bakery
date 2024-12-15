@@ -23,7 +23,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.satisfy.bakery.core.registry.ObjectRegistry;
-import net.satisfy.bakery.core.util.GeneralUtil;
+import net.satisfy.farm_and_charm.core.block.EatableBoxBlock;
+import net.satisfy.farm_and_charm.core.util.GeneralUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -48,7 +49,6 @@ public class BreadBasketBlock extends EatableBoxBlock {
             map.put(direction, GeneralUtil.rotateShape(Direction.NORTH, direction, voxelShapeSupplier.get()));
         }
     });
-
 
     public BreadBasketBlock(Properties settings) {
         super(settings);

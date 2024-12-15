@@ -37,26 +37,32 @@ public abstract class WanderingTraderManagerMixin implements CustomSpawner {
     @Final
     private ServerLevelData serverLevelData;
 
-    @Inject(method = "spawn", at = @At(value = "INVOKE", shift = At.Shift.BEFORE, target = "Lnet/minecraft/world/entity/EntityType;spawn(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/MobSpawnType;)Lnet/minecraft/world/entity/Entity;"), cancellable = true)    private void trySpawn(ServerLevel world, CallbackInfoReturnable<Boolean> cir) {
+    @Inject(method = "spawn", at = @At(value = "INVOKE", shift = At.Shift.BEFORE, target = "Lnet/minecraft/world/entity/EntityType;spawn(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/MobSpawnType;)Lnet/minecraft/world/entity/Entity;"), cancellable = true)
+    private void trySpawn(ServerLevel world, CallbackInfoReturnable<Boolean> cir) {
         if (world.random.nextBoolean()) {
             ServerPlayer playerEntity = world.getRandomPlayer();
-            assert playerEntity != null;
+            if (playerEntity == null) {
+                cir.setReturnValue(false);
+                return;
+            }
             BlockPos blockPos = playerEntity.blockPosition();
-            int i = 48;
             PoiManager pointOfInterestStorage = world.getPoiManager();
             Optional<BlockPos> optional = pointOfInterestStorage.find(type -> type.is(PoiTypes.MEETING), pos -> true, blockPos, 48, PoiManager.Occupancy.ANY);
             BlockPos blockPos2 = optional.orElse(blockPos);
             BlockPos blockPos3 = this.findSpawnPositionNear(world, blockPos2, 48);
             if (blockPos3 != null && this.hasEnoughSpace(world, blockPos3)) {
+                world.getBiome(blockPos3);
                 if (world.getBiome(blockPos3).is(Biomes.THE_VOID)) {
+                    cir.setReturnValue(false);
                     return;
                 }
 
-                WanderingTrader wanderingTraderEntity = EntityTypeRegistry.WANDERING_BAKER.get().spawn(world,  blockPos3, MobSpawnType.EVENT);
+                WanderingTrader wanderingTraderEntity = EntityTypeRegistry.WANDERING_BAKER.get().spawn(world, blockPos3, MobSpawnType.EVENT);
                 if (wanderingTraderEntity != null) {
                     for (int j = 0; j < 2; ++j) {
                         BlockPos blockPos4 = this.findSpawnPositionNear(world, wanderingTraderEntity.blockPosition(), 4);
                         if (blockPos4 == null) {
+                            cir.setReturnValue(false);
                             return;
                         }
                     }
@@ -65,8 +71,14 @@ public abstract class WanderingTraderManagerMixin implements CustomSpawner {
                     wanderingTraderEntity.setWanderTarget(blockPos2);
                     wanderingTraderEntity.restrictTo(blockPos2, 16);
                     cir.setReturnValue(true);
+                } else {
+                    cir.setReturnValue(false);
                 }
+            } else {
+                cir.setReturnValue(false);
             }
+        } else {
+            cir.setReturnValue(false);
         }
     }
 }
