@@ -119,7 +119,7 @@
   "entity.bakery.wandering_baker": "流浪烘焙师",
   "item.bakery.apple_cupcake": "苹果纸杯蛋糕",
   "item.bakery.apple_pie_slice": "苹果派切片",
-  "item.bakery.bakery_standard": "全物品收集者旗帜：§c馥郁烘焙",
+  "block.bakery.bakery_banner": "全物品收集者旗帜：§c馥郁烘焙",
   "item.bakery.bread_knife": "面包刀",
   "item.bakery.bundt_cake_slice": "圆环蛋糕切片",
   "item.bakery.cake_dough": "蛋糕面团",

@@ -100,7 +100,7 @@
   "entity.bakery.wandering_baker": "Странствующий пекарь",
   "item.bakery.apple_cupcake": "Яблочный кекс",
   "item.bakery.apple_pie_slice": "Кусочек яблочного пирога",
-  "item.bakery.bakery_standard": "Знамя выдающегося кондитера: §cBakery",
+  "block.bakery.bakery_banner": "Знамя выдающегося кондитера: §cBakery",
   "item.bakery.bread_knife": "Хлебный нож",
   "item.bakery.bread_with_jam": "Хлеб с вареньем",
   "item.bakery.bundt_cake_slice": "Кусочек торта Бандт",

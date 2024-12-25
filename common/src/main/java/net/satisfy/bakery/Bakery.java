@@ -12,6 +12,7 @@ public class Bakery {
         EntityTypeRegistry.init();
         ObjectRegistry.init();
         RecipeTypeRegistry.init();
+        
         CommonEvents.init();
         TabRegistry.init();
         SoundEventRegistry.init();

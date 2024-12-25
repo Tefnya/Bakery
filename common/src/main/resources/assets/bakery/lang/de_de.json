@@ -100,7 +100,7 @@
   "entity.bakery.wandering_baker": "Wandernder Bäcker",
   "item.bakery.apple_cupcake": "Apfel Cupcake",
   "item.bakery.apple_pie_slice": "Stück Apfelkuchen",
-  "item.bakery.bakery_standard": "Vollständigkeitsbanner: §cBakery",
+  "block.bakery.bakery_banner": "Vollständigkeitsbanner: §cBakery",
   "item.bakery.bread_knife": "Brotmesser",
   "item.bakery.bread_with_jam": "Marmeladenbrot",
   "item.bakery.bundt_cake_slice": "Stück Gugelhupf",
@@ -140,9 +140,9 @@
   "tooltip.bakery.cake_2": "§e[Rechtsklick]§r mit einem §a[Messer]§r um zu schneiden",
   "tooltip.bakery.cake_3": "§e[Shift-Rechtsklick]§r zum Essen",
   "tooltip.bakery.canbeplaced": "Kann platziert werden",
-  "tooltip.bakery.thankyou_1": "Eine Belohnung für das Herstellen aller gebackener Waren",
-  "tooltip.bakery.thankyou_2": "Wenn platziert:",
-  "tooltip.bakery.thankyou_3": "Danke für das Spielen von Bakery!",
-  "tooltip.bakery.thankyou_4": "Gewährt Resistenz I in einem Radius von 8 Blöcken",
+  "tooltip.bakery.banner.thankyou_1": "Eine Belohnung für das Herstellen aller gebackener Waren",
+  "tooltip.bakery.banner.thankyou_2": "Wenn platziert:",
+  "tooltip.bakery.banner.thankyou_3": "Danke für das Spielen von Bakery!",
+  "tooltip.bakery.banner.thankyou_4": "Gewährt Resistenz I in einem Radius von 8 Blöcken",
   "tooltip.bakery.cakedoughonstation": "Platziere einen Kuchenteig um mit dem Glasieren zu beginnen!"
 }

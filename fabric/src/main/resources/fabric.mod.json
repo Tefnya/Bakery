@@ -3,7 +3,7 @@
   "id": "bakery",
   "version": "${version}",
   "name": "[Let's Do] Bakery",
-  "description": "Build your own bakery, bake the finest pastries, delicious bread, and sweet cakes!",
+  "description": "Build your own bakery and bake the finest pastries, delicious bread, and sweet cakes!",
   "authors": [
     "satisfy"
   ],
@@ -26,10 +26,12 @@
     ],
     "jei_mod_plugin": [
       "net.satisfy.bakery.core.compat.jei.BakeryJEIPlugin"
+    ],
+    "modmenu": [
+      "net.satisfy.bakery.fabric.core.config.ModMenu"
     ]
   },
   "mixins": [
-    "bakery-common.mixins.json"
   ],
   "depends": {
     "farm_and_charm": ">=1.0.5",

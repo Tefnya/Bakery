@@ -4,10 +4,10 @@
     "item": "minecraft:netherite_ingot"
   },
   "base": {
-    "item": "bakery:bakery_standard"
+    "item": "bakery:bakery_banner"
   },
   "result": {
-    "item": "bakery:bakery_standard",
+    "item": "bakery:bakery_banner",
     "count": 2
   },
   "template": {

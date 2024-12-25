@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "bakery:item/bakery_standard"
+    "layer0": "bakery:item/bakery_banner"
   }
 }

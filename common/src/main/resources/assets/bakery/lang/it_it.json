@@ -117,7 +117,7 @@
   "entity.bakery.wandering_baker": "Panettiere Errante",
   "item.bakery.apple_cupcake": "Cupcake alla Mela",
   "item.bakery.apple_pie_slice": "Fetta di Torta di Mele",
-  "item.bakery.bakery_standard": "Stendardo del Completista: §cPanetteria",
+  "block.bakery.bakery_banner": "Stendardo del Completista: §cPanetteria",
   "item.bakery.bread_knife": "Coltello da Pane",
   "item.bakery.bundt_cake_slice": "Fetta di Ciambella",
   "item.bakery.cake_dough": "Impasto per Torta",

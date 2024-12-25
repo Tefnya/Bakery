@@ -7,7 +7,7 @@
         {
           "type": "minecraft:item",
           "weight": 1,
-          "name": "bakery:bakery_standard",
+          "name": "bakery:bakery_banner",
           "functions": [
             {
               "function": "minecraft:set_count",

@@ -117,7 +117,7 @@
   "entity.bakery.wandering_baker": "Panadero Errante",
   "item.bakery.apple_cupcake": "Cupcake de Manzana",
   "item.bakery.apple_pie_slice": "Rebanada de Tarta de Manzana",
-  "item.bakery.bakery_standard": "Estandarte del Completista: §cPanadería",
+  "block.bakery.bakery_banner": "Estandarte del Completista: §cPanadería",
   "item.bakery.bread_knife": "Cuchillo de Pan",
   "item.bakery.bundt_cake_slice": "Rebanada de Pastel Bundt",
   "item.bakery.cake_dough": "Masa de Tarta",

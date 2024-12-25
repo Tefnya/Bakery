@@ -6,6 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -13,7 +14,6 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Mirror;
-import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -25,7 +25,6 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.satisfy.bakery.core.registry.StorageTypeRegistry;
-import net.satisfy.bakery.core.registry.TagsRegistry;
 import net.satisfy.farm_and_charm.core.util.GeneralUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -53,7 +52,7 @@ public class WallDisplayBlock extends StorageBlock {
 
     @Override
     public boolean canInsertStack(ItemStack stack) {
-        return stack.is(TagsRegistry.BREAD);
+        return !(stack.getItem() instanceof BlockItem);
     }
 
     @Override
@@ -68,17 +67,10 @@ public class WallDisplayBlock extends StorageBlock {
 
     @Override
     public int getSection(Float x, Float y) {
-        int i = y >= 0.5F ? 0 : 1;
-        int j = getXSection(x);
-        return j + i * 2;
-    }
+        int row = y > 0.5F ? 1 : 0;
+        int column = x < 0.5F ? 1 : 0;
 
-    private static int getXSection(float f) {
-        if (f < 0.5F) {
-            return 1;
-        } else {
-            return f < 0.75F ? 0 : 1;
-        }
+        return row * 2 + column;
     }
 
 
@@ -163,11 +155,6 @@ public class WallDisplayBlock extends StorageBlock {
     @SuppressWarnings("deprecation")
     public @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         return SHAPE.get(state.getValue(FACING));
-    }
-
-    @Override
-    public @NotNull RenderShape getRenderShape(BlockState state) {
-        return RenderShape.MODEL;
     }
 
     @Override

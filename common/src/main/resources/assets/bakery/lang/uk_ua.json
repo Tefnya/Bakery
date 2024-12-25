@@ -100,7 +100,7 @@
   "entity.bakery.wandering_baker": "Мандрівний пекар",
   "item.bakery.apple_cupcake": "Яблучний капкейк",
   "item.bakery.apple_pie_slice": "Шматок яблучного пирога",
-  "item.bakery.bakery_standard": "Стяг завершувача: §cBakery",
+  "block.bakery.bakery_banner": "Стяг завершувача: §cBakery",
   "item.bakery.bread_knife": "Ніж для хліба",
   "item.bakery.bread_with_jam": "Хліб із джемом",
   "item.bakery.bundt_cake_slice": "Шматок торта Бандт",

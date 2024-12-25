@@ -100,7 +100,7 @@
 "entity.bakery.wandering_baker": "Boulanger errant",
 "item.bakery.apple_cupcake": "Cupcake aux pommes",
 "item.bakery.apple_pie_slice": "Tranche de tarte aux pommes",
-"item.bakery.bakery_standard": "Bannière du complétiste : §cBoulangerie",
+"block.bakery.bakery_banner": "Bannière du complétiste : §cBoulangerie",
 "item.bakery.bread_knife": "Couteau à pain",
 "item.bakery.bread_with_jam": "Pain avec de la confiture",
 "item.bakery.bundt_cake_slice": "Tranche de gâteau Bundt",

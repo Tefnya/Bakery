@@ -40,7 +40,7 @@ public class CupcakeDisplayBlock extends StorageBlock {
 
     @Override
     public boolean canInsertStack(ItemStack stack) {
-        return !(stack.getItem() instanceof BlockItem);
+        return true;
     }
 
     @Override
