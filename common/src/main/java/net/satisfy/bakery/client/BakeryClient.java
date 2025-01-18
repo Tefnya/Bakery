@@ -7,7 +7,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
-import net.satisfy.bakery.client.renderer.*;
+import net.satisfy.bakery.client.renderer.block.*;
 import net.satisfy.bakery.core.registry.ObjectRegistry;
 import net.satisfy.bakery.core.registry.EntityTypeRegistry;
 import net.satisfy.bakery.core.registry.StorageTypeRegistry;
@@ -43,7 +43,6 @@ public class BakeryClient {
         registerStorageType(StorageTypeRegistry.CUPCAKE_DISPLAY, new CupcakeDisplayRenderer());
         registerStorageType(StorageTypeRegistry.WALL_DISPLAY, new WallDisplayRenderer());
     }
-
 
     public static void registerBlockEntityRenderer() {
         BlockEntityRendererRegistry.register(EntityTypeRegistry.BAKERY_BANNER.get(), CompletionistBannerRenderer::new);

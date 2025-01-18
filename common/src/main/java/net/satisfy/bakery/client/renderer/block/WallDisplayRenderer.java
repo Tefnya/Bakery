@@ -1,4 +1,4 @@
-package net.satisfy.bakery.client.renderer;
+package net.satisfy.bakery.client.renderer.block;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;

@@ -24,6 +24,7 @@ import net.satisfy.bakery.core.item.SmallCookingPotItem;
 import net.satisfy.bakery.core.util.BakeryIdentifier;
 import net.satisfy.bakery.platform.PlatformHelper;
 import net.satisfy.farm_and_charm.core.block.*;
+import net.satisfy.farm_and_charm.core.block.SinkBlock;
 import net.satisfy.farm_and_charm.core.item.food.EffectBlockItem;
 import net.satisfy.farm_and_charm.core.item.food.EffectItem;
 import net.satisfy.farm_and_charm.core.registry.MobEffectRegistry;
@@ -170,7 +171,6 @@ public class ObjectRegistry {
         return BlockBehaviour.Properties.of().strength(breakSpeed, explosionResist);
     }
 
-    @SuppressWarnings("all")
     private static Item.Properties getFoodItemSettings(int nutrition, float saturationMod, MobEffect effect, int duration, boolean alwaysEat, boolean fast) {
         return getSettings().food(createFood(nutrition, saturationMod, effect, duration, alwaysEat, fast));
     }
