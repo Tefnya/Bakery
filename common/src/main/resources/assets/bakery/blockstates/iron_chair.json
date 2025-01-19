@@ -1,7 +1,7 @@
 {
   "variants": {
     "facing=north,half=lower": {
-      "model": "bakery:block/iron_chair_bottom"
+      "model": "bakery:block/iron_chair"
     },
     "facing=west,half=upper": {
       "y": 270,
@@ -9,7 +9,7 @@
     },
     "facing=west,half=lower": {
       "y": 270,
-      "model": "bakery:block/iron_chair_bottom"
+      "model": "bakery:block/iron_chair"
     },
     "facing=north,half=upper": {
       "model": "bakery:block/iron_chair_top"
@@ -24,11 +24,11 @@
     },
     "facing=south,half=lower": {
       "y": 180,
-      "model": "bakery:block/iron_chair_bottom"
+      "model": "bakery:block/iron_chair"
     },
     "facing=east,half=lower": {
       "y": 90,
-      "model": "bakery:block/iron_chair_bottom"
+      "model": "bakery:block/iron_chair"
     }
   }
 }

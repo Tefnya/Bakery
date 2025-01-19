@@ -57,7 +57,7 @@ public class SmallCookingPotBlock extends BaseEntityBlock {
     public static final BooleanProperty LIT = BooleanProperty.create("lit");
     public static final BooleanProperty COOKING = BooleanProperty.create("cooking");
     public static final BooleanProperty NEEDS_SUPPORT = BooleanProperty.create("needs_support");
-    public static final IntegerProperty DAMAGE = IntegerProperty.create("damage", 0, 25);
+    public static final IntegerProperty DAMAGE = IntegerProperty.create("damage", 0, 200);
 
     public SmallCookingPotBlock(Properties properties) {
         super(properties);
