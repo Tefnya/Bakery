@@ -1,10 +1,4 @@
 {
-  "cooking_pot_boiling": {
-    "subtitle": "sound.bakery.cooking_pot_boiling",
-    "sounds": [
-      "bakery:cooking_pot_boiling"
-    ]
-  },
   "cake_cut": {
     "subtitle": "sound.bakery.cake_cut",
     "sounds": [

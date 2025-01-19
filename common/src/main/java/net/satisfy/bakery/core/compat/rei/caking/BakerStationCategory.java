@@ -25,7 +25,7 @@ public class BakerStationCategory implements DisplayCategory<BakerStationDisplay
 
     @Override
     public Component getTitle() {
-        return Component.translatable("rei.bakery.baking_category");
+        return ObjectRegistry.BAKER_STATION.get().getName();
     }
 
     @Override
@@ -44,12 +44,12 @@ public class BakerStationCategory implements DisplayCategory<BakerStationDisplay
         List<Widget> widgets = Lists.newArrayList();
         widgets.add(Widgets.createRecipeBase(bounds));
 
-        int baseX = startPoint.x - 30; // Input 35 pixels to the left
+        int baseX = startPoint.x - 30; 
         int baseY = startPoint.y;
         int size = 18;
-        int arrowXOffset = 3 * size; // Arrow 35 pixels to the left, adjusted for initial move
+        int arrowXOffset = 3 * size; 
         int arrowYOffset = 0;
-        int outputXOffset = arrowXOffset + 58; // Output 3 pixels to the left, adjusted after arrow
+        int outputXOffset = arrowXOffset + 58; 
 
         widgets.add(Widgets.createArrow(new Point(baseX + arrowXOffset, baseY + arrowYOffset)).animationDurationTicks(50));
         widgets.add(Widgets.createResultSlotBackground(new Point(baseX + outputXOffset, baseY)));

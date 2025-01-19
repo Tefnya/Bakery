@@ -20,11 +20,11 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.state.BlockState;
 import net.satisfy.bakery.core.block.SmallCookingPotBlock;
-import net.satisfy.bakery.core.recipe.CookingPotRecipe;
-import net.satisfy.bakery.core.registry.RecipeTypeRegistry;
+import net.satisfy.farm_and_charm.core.recipe.CookingPotRecipe;
 import net.satisfy.farm_and_charm.client.gui.handler.CookingPotGuiHandler;
 import net.satisfy.farm_and_charm.core.item.food.EffectFood;
 import net.satisfy.farm_and_charm.core.item.food.EffectFoodHelper;
+import net.satisfy.farm_and_charm.core.registry.RecipeTypeRegistry;
 import net.satisfy.farm_and_charm.core.registry.TagRegistry;
 import net.satisfy.farm_and_charm.core.world.ImplementedInventory;
 import org.jetbrains.annotations.NotNull;
@@ -97,9 +97,30 @@ public class SmallCookingPotBlockEntity extends BlockEntity implements BlockEnti
     private boolean canCraft(Recipe<?> recipe, RegistryAccess access) {
         if (recipe == null || recipe.getResultItem(access).isEmpty()) return false;
         if (recipe instanceof CookingPotRecipe cookingRecipe) {
-            ItemStack outputSlotStack = getItem(OUTPUT_SLOT), containerSlotStack = getItem(CONTAINER_SLOT);
-            boolean isContainerCorrect = containerSlotStack.is(cookingRecipe.getContainer().getItem()), isOutputSlotCompatible = outputSlotStack.isEmpty() || isSameItemSameTags(outputSlotStack, generateOutputItem(recipe, access)) && outputSlotStack.getCount() < outputSlotStack.getMaxStackSize();
-            return isContainerCorrect && isOutputSlotCompatible;
+            if (cookingRecipe.isContainerRequired()) {
+                ItemStack containerSlotStack = getItem(CONTAINER_SLOT);
+                if (!containerSlotStack.is(cookingRecipe.getContainerItem().getItem())) return false;
+            }
+            ItemStack outputSlotStack = getItem(OUTPUT_SLOT);
+            ItemStack recipeOutput = generateOutputItem(recipe, access);
+            if (!outputSlotStack.isEmpty() && (!isSameItemSameTags(outputSlotStack, recipeOutput) || outputSlotStack.getCount() >= outputSlotStack.getMaxStackSize()))
+                return false;
+            NonNullList<ItemStack> temp = NonNullList.create();
+            for (int i = 0; i < INGREDIENTS_AREA; i++) {
+                temp.add(getItem(i).copy());
+            }
+            for (var ingredient : cookingRecipe.getIngredients()) {
+                boolean found = false;
+                for (ItemStack stack : temp) {
+                    if (ingredient.test(stack) && !stack.isEmpty()) {
+                        stack.shrink(1);
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) return false;
+            }
+            return true;
         }
         return false;
     }

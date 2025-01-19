@@ -36,7 +36,7 @@ public class BakerStationCategory implements IRecipeCategory<BakingStationRecipe
 
     @Override
     public @NotNull Component getTitle() {
-        return Component.translatable("rei.bakery.baking_category");
+        return ObjectRegistry.BAKER_STATION.get().getName();
     }
 
     @Override

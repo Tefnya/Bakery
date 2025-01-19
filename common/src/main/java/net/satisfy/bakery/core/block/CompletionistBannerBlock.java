@@ -54,7 +54,8 @@ public class CompletionistBannerBlock extends BaseEntityBlock {
 
     @Override
     public boolean canSurvive(@NotNull BlockState blockState, LevelReader levelReader, BlockPos blockPos) {
-        return levelReader.getBlockState(blockPos.below()).isSolid() || levelReader.getBlockState(blockPos.relative(blockState.getValue(BlockStateProperties.HORIZONTAL_FACING).getOpposite())).isSolid();
+        BlockState belowBlockState = levelReader.getBlockState(blockPos.below());
+        return belowBlockState.isSolid();
     }
 
     @Override
@@ -117,12 +118,12 @@ public class CompletionistBannerBlock extends BaseEntityBlock {
     @Override
     public void appendHoverText(ItemStack stack, @Nullable BlockGetter level, List<Component> tooltip, net.minecraft.world.item.TooltipFlag flag) {
         if (PlatformHelper.shouldShowTooltip()) {
-            tooltip.add(Component.translatable("tooltip.bakery.banner.thankyou_1").withStyle(style -> style.withColor(TextColor.fromRgb(0x513A8B))));
+            tooltip.add(Component.translatable("tooltip.bakery.banner.thankyou_1").withStyle(style -> style.withColor(TextColor.fromRgb(0xC29E6B))));
             tooltip.add(Component.empty());
-            tooltip.add(Component.translatable("tooltip.bakery.banner.thankyou_2").withStyle(style -> style.withColor(TextColor.fromRgb(0x513A8B))));
-            tooltip.add(Component.translatable("tooltip.bakery.banner.thankyou_4").withStyle(style -> style.withColor(TextColor.fromRgb(0x513A8B))));
+            tooltip.add(Component.translatable("tooltip.bakery.banner.thankyou_2").withStyle(style -> style.withColor(TextColor.fromRgb(0xC29E6B))));
+            tooltip.add(Component.translatable("tooltip.bakery.banner.thankyou_4").withStyle(style -> style.withColor(TextColor.fromRgb(0xC29E6B))));
             tooltip.add(Component.empty());
-            tooltip.add(Component.translatable("tooltip.bakery.banner.thankyou_3").withStyle(style -> style.withColor(TextColor.fromRgb(0x513A8B))));
+            tooltip.add(Component.translatable("tooltip.bakery.banner.thankyou_3").withStyle(style -> style.withColor(TextColor.fromRgb(0xC29E6B))));
         }
     }
 }

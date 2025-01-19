@@ -9,7 +9,10 @@
     }
   ],
   "container": {
-    "item": "bakery:jar"
+    "required": true,
+    "item": {
+      "item": "bakery:jar"
+    }
   },
   "result": {
     "item": "bakery:sweetberry_jam"

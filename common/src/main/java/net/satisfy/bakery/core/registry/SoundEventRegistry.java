@@ -15,7 +15,6 @@ public class SoundEventRegistry {
 
     private static final Registrar<SoundEvent> SOUND_EVENTS = DeferredRegister.create(Bakery.MOD_ID, Registries.SOUND_EVENT).getRegistrar();
 
-    public static final RegistrySupplier<SoundEvent> COOKING_POT_BOILING = create("cooking_pot_boiling");
     public static final RegistrySupplier<SoundEvent> COOKING_POT_HIT = create("cooking_pot_hit");
     public static final RegistrySupplier<SoundEvent> CAKE_CUT = create("cake_cut");
     public static final RegistrySupplier<SoundEvent> DRAWER_OPEN = create("drawer_open");
@@ -25,8 +24,6 @@ public class SoundEventRegistry {
 
     private static RegistrySupplier<SoundEvent> create(String name) {
         ResourceLocation id = new BakeryIdentifier(name);
-        return SOUND_EVENTS.register(id, () -> {
-            return SoundEvent.createVariableRangeEvent(id);
-        });
+        return SOUND_EVENTS.register(id, () -> SoundEvent.createVariableRangeEvent(id));
     }
 }

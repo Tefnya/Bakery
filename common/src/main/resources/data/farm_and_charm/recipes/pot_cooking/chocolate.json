@@ -12,7 +12,10 @@
     }
   ],
   "container": {
-    "item": "minecraft:bowl"
+    "required": false,
+    "item": {
+      "item": "bakery:jar"
+    }
   },
   "result": {
     "item": "bakery:chocolate_truffle",
