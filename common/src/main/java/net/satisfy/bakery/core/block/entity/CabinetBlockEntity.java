@@ -93,7 +93,7 @@ public class CabinetBlockEntity extends RandomizableContainerBlockEntity {
 
     @Override
     protected @NotNull AbstractContainerMenu createMenu(int syncId, Inventory playerInventory) {
-        return new ChestMenu(MenuType.GENERIC_9x4, syncId, playerInventory, this, 4); // 4x9 Layout
+        return new ChestMenu(MenuType.GENERIC_9x4, syncId, playerInventory, this, 4);
     }
 
     @Override

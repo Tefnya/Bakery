@@ -78,6 +78,9 @@ public class PieBlock extends FacingBlock {
     }
 
     public ItemStack getPieSliceItem() {
+        if (this.Slice == null) {
+            throw new IllegalStateException("PieBlock's slice supplier is null!");
+        }
         return new ItemStack(this.Slice.get());
     }
 
