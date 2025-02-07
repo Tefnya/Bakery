@@ -14,6 +14,7 @@
     }
   },
   "result": {
-    "item": "bakery:cabinet"
+    "item": "bakery:cabinet",
+    "count": 2
   }
 }
