@@ -12,27 +12,27 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static boolean shouldShowTooltip() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.effects.completionistBannerEffect.bannerGiveEffect && config.misc.bannerShowTooltip;
+        return config.effects.completionistBannerEffect.bannerGiveEffect && config.effects.completionistBannerEffect.bannerShowTooltip;
     }
 
     public static boolean showBakerStationInfo() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.misc.showBakerStationInfo;
+        return config.infoTooltips.showBakerStationInfo;
     }
 
     public static boolean showJamPotInfo() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.misc.showJamPotInfo;
+        return config.infoTooltips.showJamPotInfo;
     }
 
     public static boolean showDisplayInfo() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.misc.showDisplayInfo;
+        return config.infoTooltips.showDisplayInfo;
     }
 
     public static boolean infoTooltipsNeedDungarees() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.misc.needDungarees;
+        return config.infoTooltips.needDungarees;
     }
 
     public static int getCroissantNutrition() {
@@ -42,7 +42,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getCroissantSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.croissantSaturationMod;
+        return config.food.croissantSaturation;
     }
 
     public static int getCrustyBreadNutrition() {
@@ -52,7 +52,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getCrustyBreadSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.crustyBreadSaturationMod;
+        return config.food.crustyBreadSaturation;
     }
 
     public static int getBreadNutrition() {
@@ -62,7 +62,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getBreadSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.breadSaturationMod;
+        return config.food.breadSaturation;
     }
 
     public static int getBaguetteNutrition() {
@@ -72,7 +72,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getBaguetteSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.baguetteSaturationMod;
+        return config.food.baguetteSaturation;
     }
 
     public static int getToastNutrition() {
@@ -82,7 +82,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getToastSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.toastSaturationMod;
+        return config.food.toastSaturation;
     }
 
     public static int getBraidedBreadNutrition() {
@@ -92,7 +92,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getBraidedBreadSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.braidedBreadSaturationMod;
+        return config.food.braidedBreadSaturation;
     }
 
     public static int getSandwichNutrition() {
@@ -102,7 +102,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getSandwichSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.sandwichSaturationMod;
+        return config.food.sandwichSaturation;
     }
 
     public static int getVegetableSandwichNutrition() {
@@ -112,7 +112,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getVegetableSandwichSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.vegetableSandwichSaturationMod;
+        return config.food.vegetableSandwichSaturation;
     }
 
     public static int getGrilledSalmonSandwichNutrition() {
@@ -122,7 +122,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getGrilledSalmonSandwichSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.grilledSalmonSandwichSaturationMod;
+        return config.food.grilledSalmonSandwichSaturation;
     }
 
     public static int getGrilledBaconSandwichNutrition() {
@@ -132,7 +132,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getGrilledBaconSandwichSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.grilledBaconSandwichSaturationMod;
+        return config.food.grilledBaconSandwichSaturation;
     }
 
     public static int getBreadWithJamNutrition() {
@@ -142,7 +142,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getBreadWithJamSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.breadWithJamSaturationMod;
+        return config.food.breadWithJamSaturation;
     }
 
     public static int getStrawberryCakeSliceNutrition() {
@@ -152,7 +152,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getStrawberryCakeSliceSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.strawberryCakeSliceSaturationMod;
+        return config.food.strawberryCakeSliceSaturation;
     }
 
     public static int getSweetberryCakeSliceNutrition() {
@@ -162,7 +162,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getSweetberryCakeSliceSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.sweetberryCakeSliceSaturationMod;
+        return config.food.sweetberryCakeSliceSaturation;
     }
 
     public static int getChocolateCakeSliceNutrition() {
@@ -172,7 +172,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getChocolateCakeSliceSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.chocolateCakeSliceSaturationMod;
+        return config.food.chocolateCakeSliceSaturation;
     }
 
     public static int getChocolateGateauSliceNutrition() {
@@ -182,7 +182,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getChocolateGateauSliceSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.chocolateGateauSliceSaturationMod;
+        return config.food.chocolateGateauSliceSaturation;
     }
 
     public static int getBundtCakeSliceNutrition() {
@@ -192,7 +192,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getBundtCakeSliceSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.bundtCakeSliceSaturationMod;
+        return config.food.bundtCakeSliceSaturation;
     }
 
     public static int getLinzerTartSliceNutrition() {
@@ -202,7 +202,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getLinzerTartSliceSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.linzerTartSliceSaturationMod;
+        return config.food.linzerTartSliceSaturation;
     }
 
     public static int getApplePieSliceNutrition() {
@@ -212,7 +212,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getApplePieSliceSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.applePieSliceSaturationMod;
+        return config.food.applePieSliceSaturation;
     }
 
     public static int getGlowberryPieSliceNutrition() {
@@ -222,7 +222,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getGlowberryPieSliceSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.glowberryPieSliceSaturationMod;
+        return config.food.glowberryPieSliceSaturation;
     }
 
     public static int getChocolateTartSliceNutrition() {
@@ -232,7 +232,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getChocolateTartSliceSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.chocolateTartSliceSaturationMod;
+        return config.food.chocolateTartSliceSaturation;
     }
 
     public static int getPuddingSliceNutrition() {
@@ -242,7 +242,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getPuddingSliceSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.puddingSliceSaturationMod;
+        return config.food.puddingSliceSaturation;
     }
 
     public static int getStrawberryGlazedCookieNutrition() {
@@ -252,7 +252,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getStrawberryGlazedCookieSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.strawberryGlazedCookieSaturationMod;
+        return config.food.strawberryGlazedCookieSaturation;
     }
 
     public static int getSweetberryGlazedCookieNutrition() {
@@ -262,7 +262,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getSweetberryGlazedCookieSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.sweetberryGlazedCookieSaturationMod;
+        return config.food.sweetberryGlazedCookieSaturation;
     }
 
     public static int getChocolateGlazedCookieNutrition() {
@@ -272,7 +272,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getChocolateGlazedCookieSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.chocolateGlazedCookieSaturationMod;
+        return config.food.chocolateGlazedCookieSaturation;
     }
 
     public static int getStrawberryCupcakeNutrition() {
@@ -282,7 +282,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getStrawberryCupcakeSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.strawberryCupcakeSaturationMod;
+        return config.food.strawberryCupcakeSaturation;
     }
 
     public static int getSweetberryCupcakeNutrition() {
@@ -292,7 +292,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getSweetberryCupcakeSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.sweetberryCupcakeSaturationMod;
+        return config.food.sweetberryCupcakeSaturation;
     }
 
     public static int getAppleCupcakeNutrition() {
@@ -302,7 +302,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getAppleCupcakeSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.appleCupcakeSaturationMod;
+        return config.food.appleCupcakeSaturation;
     }
 
     public static int getCornetNutrition() {
@@ -312,7 +312,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getCornetSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.cornetSaturationMod;
+        return config.food.cornetSaturation;
     }
 
     public static int getJamRollNutrition() {
@@ -322,7 +322,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getJamRollSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.jamRollSaturationMod;
+        return config.food.jamRollSaturation;
     }
 
     public static int getWaffleNutrition() {
@@ -332,7 +332,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getWaffleSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.waffleSaturationMod;
+        return config.food.waffleSaturation;
     }
 
     public static int getChocolateTruffleNutrition() {
@@ -342,7 +342,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getChocolateTruffleSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.chocolateTruffleSaturationMod;
+        return config.food.chocolateTruffleSaturation;
     }
 
     public static int getMisslilituBiscuitNutrition() {
@@ -352,7 +352,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getMisslilituBiscuitSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.misslilituBiscuitSaturationMod;
+        return config.food.misslilituBiscuitSaturation;
     }
 
     public static int getBunNutrition() {
@@ -362,7 +362,7 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static float getBunSaturation() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.food.bunSaturationMod;
+        return config.food.bunSaturation;
     }
 
     public static int getVitalityEffectInterval() {
@@ -417,37 +417,37 @@ public class PlatformHelperImpl extends PlatformHelper {
 
     public static boolean isKneadingEnabled() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.misc.enableKneading;
+        return config.baking.enableKneading;
     }
 
     public static int getKneadPresses() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.misc.kneadPresses;
+        return config.baking.kneadPresses;
     }
 
     public static int getRollingPinPresses() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.misc.rollingPinPresses;
+        return config.baking.rollingPinPresses;
     }
 
     public static int getKnifeDuration() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.misc.knifeDuration;
+        return config.baking.knifeDuration;
     }
 
     public static int getJamDuration() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return config.misc.jamDuration;
+        return config.baking.jamDuration;
     }
 
     public static float getKnifeAttackSpeed() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return (float) config.misc.knifeAttackSpeed;
+        return (float) config.baking.knifeAttackSpeed;
     }
 
     public static float getRollingPinAttackSpeed() {
         BakeryFabricConfig config = AutoConfig.getConfigHolder(BakeryFabricConfig.class).getConfig();
-        return (float) config.misc.rollingPinAttackSpeed;
+        return (float) config.baking.rollingPinAttackSpeed;
     }
 
     public static int getCroissantEffectDuration() {

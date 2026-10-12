@@ -16,6 +16,7 @@ public class Bakery {
     }
 
     public static void init() {
+        CompostableRegistry.registerCompostable();
         MobEffectRegistry.init();
         ObjectRegistry.init();
         FlammableBlockRegistry.init();

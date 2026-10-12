@@ -43,7 +43,7 @@ public class JamPotInfoProvider implements BlockInfoProvider {
         }
         List<InfoSection> sections = new ArrayList<>();
         if (!state.getValue(SmallCookingPotBlock.LIT)) {
-            sections.add(InfoSection.title(Component.translatable("hud.bakery.jam_pot.needs_heat").withStyle(ChatFormatting.RED)));
+            sections.add(InfoSection.title(Component.translatable("hud.bakery.jam_pot.needs_heat").withStyle(ChatFormatting.GOLD)));
             return sections;
         }
         if (pot.isBurnt()) {
@@ -112,7 +112,7 @@ public class JamPotInfoProvider implements BlockInfoProvider {
             return Component.translatable("hud.bakery.jam_pot.cooking");
         }
         return switch (pot.currentConsistency()) {
-            case RUNNY -> Component.translatable("hud.bakery.jam_pot.runny").withStyle(ChatFormatting.AQUA);
+            case RUNNY -> Component.translatable("hud.bakery.jam_pot.runny").withStyle(ChatFormatting.YELLOW);
             case PERFECT -> Component.translatable("hud.bakery.jam_pot.ready").withStyle(ChatFormatting.GREEN);
             case CARAMELIZED -> Component.translatable("hud.bakery.jam_pot.caramelized").withStyle(ChatFormatting.GOLD);
         };

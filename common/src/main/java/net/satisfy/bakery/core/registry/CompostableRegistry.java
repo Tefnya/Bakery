@@ -1,40 +1,40 @@
 package net.satisfy.bakery.core.registry;
 
-import net.minecraft.world.level.block.ComposterBlock;
+import net.satisfy.foundation.compostable.FoundationCompostables;
 
 public class CompostableRegistry {
     public static void registerCompostable() {
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.SWEET_DOUGH.get(), .3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.CRUSTY_BREAD.get().asItem(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BREAD.get().asItem(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BAGUETTE.get().asItem(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.TOAST.get().asItem(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BRAIDED_BREAD.get().asItem(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BUN.get().asItem(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.VEGETABLE_SANDWICH.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.SANDWICH.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.STRAWBERRY_CAKE_SLICE.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.SWEETBERRY_CAKE_SLICE.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.CHOCOLATE_CAKE_SLICE.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.PUDDING_SLICE.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BUNDT_CAKE_SLICE.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.LINZER_TART_SLICE.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.APPLE_PIE_SLICE.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.GLOWBERRY_PIE_SLICE.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.CHOCOLATE_TART_SLICE.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.STRAWBERRY_GLAZED_COOKIE.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.SWEETBERRY_GLAZED_COOKIE.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.CHOCOLATE_GLAZED_COOKIE.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.STRAWBERRY_CUPCAKE.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.SWEETBERRY_CUPCAKE.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.APPLE_CUPCAKE.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.JAM_ROLL.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.WAFFLE.get().asItem(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.CHOCOLATE_TRUFFLE.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.GRILLED_BACON_SANDWICH.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.GRILLED_SALMON_SANDWICH.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BREAD_WITH_JAM.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.MISSLILITU_BISCUIT.get(), 0.3f);
+        FoundationCompostables.register(.3F, ObjectRegistry.SWEET_DOUGH);
+        FoundationCompostables.register(0.3F, ObjectRegistry.CRUSTY_BREAD);
+        FoundationCompostables.register(0.3F, ObjectRegistry.BREAD);
+        FoundationCompostables.register(0.3F, ObjectRegistry.BAGUETTE);
+        FoundationCompostables.register(0.3F, ObjectRegistry.TOAST);
+        FoundationCompostables.register(0.3F, ObjectRegistry.BRAIDED_BREAD);
+        FoundationCompostables.register(0.3F, ObjectRegistry.BUN);
+        FoundationCompostables.register(0.3F, ObjectRegistry.VEGETABLE_SANDWICH);
+        FoundationCompostables.register(0.3F, ObjectRegistry.SANDWICH);
+        FoundationCompostables.register(0.3F, ObjectRegistry.STRAWBERRY_CAKE_SLICE);
+        FoundationCompostables.register(0.3F, ObjectRegistry.SWEETBERRY_CAKE_SLICE);
+        FoundationCompostables.register(0.3F, ObjectRegistry.CHOCOLATE_CAKE_SLICE);
+        FoundationCompostables.register(0.3F, ObjectRegistry.PUDDING_SLICE);
+        FoundationCompostables.register(0.3F, ObjectRegistry.BUNDT_CAKE_SLICE);
+        FoundationCompostables.register(0.3F, ObjectRegistry.LINZER_TART_SLICE);
+        FoundationCompostables.register(0.3F, ObjectRegistry.APPLE_PIE_SLICE);
+        FoundationCompostables.register(0.3F, ObjectRegistry.GLOWBERRY_PIE_SLICE);
+        FoundationCompostables.register(0.3F, ObjectRegistry.CHOCOLATE_TART_SLICE);
+        FoundationCompostables.register(0.3F, ObjectRegistry.STRAWBERRY_GLAZED_COOKIE);
+        FoundationCompostables.register(0.3F, ObjectRegistry.SWEETBERRY_GLAZED_COOKIE);
+        FoundationCompostables.register(0.3F, ObjectRegistry.CHOCOLATE_GLAZED_COOKIE);
+        FoundationCompostables.register(0.3F, ObjectRegistry.STRAWBERRY_CUPCAKE);
+        FoundationCompostables.register(0.3F, ObjectRegistry.SWEETBERRY_CUPCAKE);
+        FoundationCompostables.register(0.3F, ObjectRegistry.APPLE_CUPCAKE);
+        FoundationCompostables.register(0.3F, ObjectRegistry.JAM_ROLL);
+        FoundationCompostables.register(0.3F, ObjectRegistry.WAFFLE);
+        FoundationCompostables.register(0.3F, ObjectRegistry.CHOCOLATE_TRUFFLE);
+        FoundationCompostables.register(0.3F, ObjectRegistry.GRILLED_BACON_SANDWICH);
+        FoundationCompostables.register(0.3F, ObjectRegistry.GRILLED_SALMON_SANDWICH);
+        FoundationCompostables.register(0.3F, ObjectRegistry.BREAD_WITH_JAM);
+        FoundationCompostables.register(0.3F, ObjectRegistry.MISSLILITU_BISCUIT);
 
     }
 }

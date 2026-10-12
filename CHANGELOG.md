@@ -1,3 +1,16 @@
+[2.1.9]
+
+**Changed**
+* Food values rebalanced to match Farm & Charm. Food is now worth roughly what went into it, and more work gives more food
+  * Breads no longer fill you up like Golden Carrots. Bread and Crusty Bread now match vanilla bread, Baguette and Braided Bread give a bit more
+  * Cake Dough and Sweet Dough are ingredients now and barely fill you when eaten raw
+  * Sandwiches with meat or fish fill noticeably more, the Vegetable Sandwich and Bread with Jam a bit less
+  * Cake, tart and pie slices give a little less. A whole cake now fills about one and a half meals instead of almost two full hunger bars
+  * Misslilitu Biscuit, Glazed Cookies and Jam Rolls are snacks now, Buns, Croissants and Waffles give slightly less
+  * Existing config files keep their old values. Delete the food entries (or the whole file) to get the new ones
+
+***
+
 [2.1.8]
 
 **Fixed**

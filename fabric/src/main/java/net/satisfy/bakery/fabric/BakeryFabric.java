@@ -9,7 +9,6 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.satisfy.bakery.Bakery;
-import net.satisfy.bakery.core.registry.CompostableRegistry;
 import net.satisfy.bakery.fabric.core.config.BakeryFabricConfig;
 
 public class BakeryFabric implements ModInitializer {
@@ -20,7 +19,6 @@ public class BakeryFabric implements ModInitializer {
         Bakery.init();
 
         if (FabricLoader.getInstance().isModLoaded("farm_and_charm")) {
-            CompostableRegistry.registerCompostable();
         }
 
         FabricLoader.getInstance().getModContainer(Bakery.MOD_ID).ifPresent(container ->

@@ -93,12 +93,11 @@ public class BakerStationInfoProvider implements BlockInfoProvider {
             return sections;
         }
         actions.forEach((action, icons) -> {
-            InfoSection section = InfoSection.icons(Component.translatable("hud.bakery.blank_cake." + action), icons, InfoSection.GRID_COLUMNS);
-            if (action.equals("roll") && PlatformHelper.isKneadingEnabled()) {
-                section = section.withLines(List.of(Component.translatable("hud.bakery.blank_cake.knead_hint").withStyle(ChatFormatting.GRAY)));
-            }
-            sections.add(section);
+            sections.add(InfoSection.icons(Component.translatable("hud.bakery.blank_cake." + action), icons, InfoSection.GRID_COLUMNS));
         });
+        if (actions.containsKey("roll") && PlatformHelper.isKneadingEnabled()) {
+            sections.add(InfoSection.title(Component.translatable("hud.bakery.blank_cake.knead_hint").withStyle(ChatFormatting.GRAY)));
+        }
         return sections;
     }
 
@@ -112,8 +111,9 @@ public class BakerStationInfoProvider implements BlockInfoProvider {
             default -> "roll";
         };
         BlankCakeStage stage = cake.getAnimation() == CakeAnimation.ROLL_UP ? BlankCakeStage.SHEET : BlankCakeStage.DOUGH;
-        return List.of(onStation(stage), InfoSection.lines(Component.translatable("hud.bakery.blank_cake." + action + "_progress_hint").withStyle(ChatFormatting.GRAY),
-                List.of(Component.translatable("hud.bakery.blank_cake." + action + "_progress", cake.getPresses(), cake.getPressesNeeded()).withStyle(ChatFormatting.GRAY))));
+        return List.of(onStation(stage),
+                InfoSection.title(Component.translatable("hud.bakery.blank_cake." + action + "_progress", cake.getPresses(), cake.getPressesNeeded()).withStyle(ChatFormatting.GRAY)),
+                InfoSection.title(Component.translatable("hud.bakery.blank_cake." + action + "_progress_hint").withStyle(ChatFormatting.GRAY)));
     }
 
     private static boolean describeFilling(Level level, BlankCakeStage stage, BlankCakeBlockEntity cake, List<InfoSection> sections) {

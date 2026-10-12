@@ -43,12 +43,12 @@ public class DisplayInfoProvider implements BlockInfoProvider {
             return nearestStandSpot(state, pos, storage);
         }
         if (state.getBlock() instanceof BreadBox) {
-            List<InfoSection> sections = new ArrayList<>(contents(state, storage));
+            List<InfoSection> sections = new ArrayList<>(contents(Component.translatable("hud.bakery.bread_box.in"), storage));
             sections.add(InfoSection.title(Component.translatable(state.getValue(BreadBox.OPEN) ? "hud.bakery.bread_box.close" : "hud.bakery.bread_box.open").withStyle(ChatFormatting.GRAY)));
             return sections;
         }
         if (state.getBlock() instanceof TrayBlock) {
-            return contents(state, storage);
+            return contents(Component.translatable("hud.bakery.tray.on"), storage);
         }
         return List.of();
     }
@@ -107,7 +107,7 @@ public class DisplayInfoProvider implements BlockInfoProvider {
         return List.of(InfoSection.icons(Component.translatable("hud.bakery.display_slot", nearest.getHoverName(), nearest.getCount()), List.of(nearest), InfoSection.ROW_COLUMNS));
     }
 
-    private static List<InfoSection> contents(BlockState state, StorageBlockEntity storage) {
+    private static List<InfoSection> contents(Component title, StorageBlockEntity storage) {
         List<ItemStack> merged = new ArrayList<>();
         for (ItemStack stack : storage.getInventory()) {
             if (stack.isEmpty()) {
@@ -123,6 +123,6 @@ public class DisplayInfoProvider implements BlockInfoProvider {
         if (merged.isEmpty()) {
             return List.of();
         }
-        return List.of(InfoSection.icons(state.getBlock().getName(), merged, InfoSection.ROW_COLUMNS).withDecorations());
+        return List.of(InfoSection.icons(title, merged, InfoSection.ROW_COLUMNS).withDecorations());
     }
 }

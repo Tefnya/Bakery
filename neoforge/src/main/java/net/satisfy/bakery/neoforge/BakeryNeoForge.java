@@ -21,7 +21,6 @@ import net.neoforged.fml.event.config.ModConfigEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.event.AddPackFindersEvent;
 import net.satisfy.bakery.Bakery;
-import net.satisfy.bakery.core.registry.CompostableRegistry;
 import net.satisfy.bakery.neoforge.core.config.BakeryNeoForgeConfig;
 import org.jetbrains.annotations.Nullable;
 
@@ -48,7 +47,6 @@ public class BakeryNeoForge {
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
-        event.enqueueWork(CompostableRegistry::registerCompostable);
     }
 
     private static void addBuiltinPacks(AddPackFindersEvent event) {
