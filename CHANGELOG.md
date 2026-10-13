@@ -1,3 +1,10 @@
+[2.1.10]
+
+**Fixed**
+* Crash on Fabric when starting the game, caused by the Vitality effect not being registered yet when the food items were loaded
+
+***
+
 [2.1.9]
 
 **Changed**
