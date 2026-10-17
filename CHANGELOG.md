@@ -1,3 +1,13 @@
+[2.1.11]
+
+**Fixed**
+* Jam Pot dropped nothing when broken, even with a Pickaxe or Silk Touch. It now drops itself and still returns its ingredients and jars
+* Jam Pot sometimes did not start cooking when the last ingredient was the final item in your hand
+* Jam Pot grate on a Campfire wobbled and hopped along with the pot. Now only the pot moves
+* Jam Pot now cooks on a lit Campfire or Soul Campfire
+
+***
+
 [2.1.10]
 
 **Fixed**

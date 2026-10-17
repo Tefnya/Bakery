@@ -7,12 +7,15 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.block.model.BakedQuad;
+import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
@@ -25,6 +28,7 @@ import net.satisfy.bakery.core.block.entity.SmallCookingPotBlockEntity;
 import net.satisfy.farm_and_charm.client.model.CraftingBowlModel;
 import org.joml.Quaternionf;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class JamPotRenderer implements BlockEntityRenderer<SmallCookingPotBlockEntity> {
@@ -62,12 +66,18 @@ public class JamPotRenderer implements BlockEntityRenderer<SmallCookingPotBlockE
         }
         float time = level.getGameTime() + partialTick;
 
+        BlockState state = pot.getBlockState();
+        BakedModel model = Minecraft.getInstance().getBlockRenderer().getBlockModel(state);
+        List<BakedQuad> support = new ArrayList<>();
+        List<BakedQuad> body = new ArrayList<>();
+        splitQuads(model, state, support, body);
+        VertexConsumer consumer = buffers.getBuffer(RenderType.cutout());
+        drawQuads(poseStack, consumer, support, light, overlay);
+
         poseStack.pushPose();
         float whiskAngle = pot.getWhiskAngle(partialTick);
         move(pot, time, whiskAngle, poseStack);
-        BlockState state = pot.getBlockState();
-        Minecraft.getInstance().getBlockRenderer().getModelRenderer().renderModel(poseStack.last(), buffers.getBuffer(RenderType.cutout()), state,
-                Minecraft.getInstance().getBlockRenderer().getBlockModel(state), 1.0F, 1.0F, 1.0F, light, overlay);
+        drawQuads(poseStack, consumer, body, light, overlay);
 
         if (pot.isBurnt()) {
             drawSurface(poseStack, buffers, light, FULL, pot.getDisplayColor());
@@ -86,6 +96,34 @@ public class JamPotRenderer implements BlockEntityRenderer<SmallCookingPotBlockE
 
         drawWhisk(poseStack, buffers, light, overlay, whiskAngle, pot.getBlockState().getValue(SmallCookingPotBlock.FACING));
         poseStack.popPose();
+    }
+
+    private static void splitQuads(BakedModel model, BlockState state, List<BakedQuad> support, List<BakedQuad> body) {
+        RandomSource random = RandomSource.create(42L);
+        List<Direction> sides = new ArrayList<>(List.of(Direction.values()));
+        sides.add(null);
+        for (Direction side : sides) {
+            for (BakedQuad quad : model.getQuads(state, side, random)) {
+                (isSupport(quad) ? support : body).add(quad);
+            }
+        }
+    }
+
+    private static boolean isSupport(BakedQuad quad) {
+        int[] vertices = quad.getVertices();
+        int stride = vertices.length / 4;
+        for (int i = 0; i < 4; i++) {
+            if (Float.intBitsToFloat(vertices[i * stride + 1]) > 0.0001F) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static void drawQuads(PoseStack poseStack, VertexConsumer consumer, List<BakedQuad> quads, int light, int overlay) {
+        for (BakedQuad quad : quads) {
+            consumer.putBulkData(poseStack.last(), quad, 1.0F, 1.0F, 1.0F, 1.0F, light, overlay);
+        }
     }
 
     private static void move(SmallCookingPotBlockEntity pot, float time, float whiskAngle, PoseStack poseStack) {

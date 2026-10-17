@@ -18,6 +18,7 @@ import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -26,6 +27,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CampfireBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.satisfy.bakery.core.block.SmallCookingPotBlock;
@@ -84,7 +86,8 @@ public class SmallCookingPotBlockEntity extends BlockEntity {
     }
 
     public static void serverTick(Level level, BlockPos pos, BlockState state, SmallCookingPotBlockEntity pot) {
-        boolean heated = level.getBlockState(pos.below()).is(TagRegistry.ALLOWS_COOKING);
+        BlockState below = level.getBlockState(pos.below());
+        boolean heated = below.is(TagRegistry.ALLOWS_COOKING) || below.is(BlockTags.CAMPFIRES) && below.getValue(CampfireBlock.LIT);
         if (state.getValue(SmallCookingPotBlock.LIT) != heated) {
             level.setBlock(pos, state.setValue(SmallCookingPotBlock.LIT, heated), Block.UPDATE_ALL);
         }
@@ -182,7 +185,8 @@ public class SmallCookingPotBlockEntity extends BlockEntity {
         if (recipes().stream().noneMatch(recipe -> recipe.value().accepts(candidate))) {
             return false;
         }
-        ingredients.add(stack.copyWithCount(1));
+        ItemStack added = stack.copyWithCount(1);
+        ingredients.add(added.copy());
         ItemStack remainder = stack.getItem().hasCraftingRemainingItem() ? new ItemStack(stack.getItem().getCraftingRemainingItem()) : ItemStack.EMPTY;
         stack.consume(1, player);
         if (!remainder.isEmpty() && !player.getAbilities().instabuild && !player.getInventory().add(remainder)) {
@@ -190,7 +194,7 @@ public class SmallCookingPotBlockEntity extends BlockEntity {
         }
         level.playSound(null, worldPosition, SoundEvents.SLIME_SQUISH_SMALL, SoundSource.BLOCKS, 0.5F, 1.3F + level.random.nextFloat() * 0.2F);
         if (level instanceof ServerLevel serverLevel) {
-            serverLevel.sendParticles(new ItemParticleOption(ParticleTypes.ITEM, stack.copyWithCount(1)), worldPosition.getX() + 0.5, worldPosition.getY() + 0.3, worldPosition.getZ() + 0.5, 4, 0.08, 0.02, 0.08, 0.04);
+            serverLevel.sendParticles(new ItemParticleOption(ParticleTypes.ITEM, added), worldPosition.getX() + 0.5, worldPosition.getY() + 0.3, worldPosition.getZ() + 0.5, 4, 0.08, 0.02, 0.08, 0.04);
         }
 
         JamRecipe.Input input = new JamRecipe.Input(List.copyOf(ingredients));
